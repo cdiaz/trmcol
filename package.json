@@ -1,0 +1,26 @@
+{
+  "name": "trmcol",
+  "description": "Consulta el webservice de la Superintendencia Fianciera de Colombia para Obtener La tasa de cambio representativa del mercado (TRM) en una fecha especifica",
+  "version": "0.1.1",
+  "author": "Cristiam Diaz <cdiaz@quantux.co>",
+  "maintainers": [
+    "cdiaz <cdiaz@quantux.co>"
+    ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdiaz/trmcol.git"
+  },
+  "keywords": [
+    "trm",
+    "dolar",
+    "tasa de cambio"
+  ],
+  "dependencies": {
+    "soap": "*"
+  },
+  "main": "./lib/trmcol",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.6.12"
+  }
+}
