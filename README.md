@@ -1,9 +1,9 @@
-#Trmcol
+# Trmcol
 
-###Consulta el webservice de la Superintendencia Fianciera de Colombia para Obtener La tasa de cambio representativa del mercado (TRM) en una fecha especifica.
+### Consulta el webservice de la Superintendencia Fianciera de Colombia para Obtener La tasa de cambio representativa del mercado (TRM) en una fecha específica.
 --
 
-## Instalacion
+## Instalación
 
 ```sh
 npm install trmcol --save
@@ -21,7 +21,7 @@ npm install trmcol --save
 	});
 
 
-Se debe enviar como parametro una fecha con formato YY-MM-DD;  La respuesta retornada es un objeto Json con la siguiente estructura: 
+Se debe enviar como parametro una fecha con formato YY-MM-DD;  La respuesta retornada es un objeto JSON con la siguiente estructura: 
 
 	{ id: '304751', unit: 'COP', validityFrom: Sat Mar 19 2016 00:00:00 GMT-0500 (COT), validityTo: Tue Mar 22 2016 00:00:00 GMT-0500 (COT), value: '3065.79', success: true }
 
