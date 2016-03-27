@@ -1,6 +1,20 @@
 var test = require('tape')
 var trmcol = require('./')
 
+test('Valor actual', function (t) {
+  t.plan(3)
+
+  trmcol.query(function (err, trm1) {
+    t.error(err)
+    var d = new Date()
+    d.setTime(d.getTime() + (d.getTimezoneOffset() - 300) * 60000) // Forzar hora colombiana
+    trmcol.query(d.toISOString().slice(0, 10).replace(/-/g, ''), function (err, trm2) {
+      t.error(err)
+      t.equal(trm1.value, trm2.value)
+    })
+  })
+})
+
 test('Fechas Válidas', function (t) {
   t.plan(4)
 
