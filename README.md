@@ -2,6 +2,8 @@
 
 #### Consulta el webservice de la Superintendencia Fianciera de Colombia para obtener la tasa de cambio representativa del mercado (TRM) en una fecha específica
 
+[![NPM](https://nodei.co/npm/trmcol.png?downloads=true)](https://nodei.co/npm/trmcol/)
+
 ## Instalación
 
 ```sh
