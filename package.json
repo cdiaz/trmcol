@@ -31,10 +31,11 @@
   },
   "devDependencies": {
     "standard": "^6.0.8",
+    "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   },
   "scripts": {
-    "test": "standard && node test"
+    "test": "standard && tape test.js | tap-spec"
   },
   "bin": {
     "trmcol": "./bin/cmd.js"
