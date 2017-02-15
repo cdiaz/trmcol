@@ -2,7 +2,7 @@
 var trmcol = require('../')
 
 var d = new Date()
-d.setTime(d.getTime() + (d.getTimezoneOffset() - 300) * 60000) // Forzar hora colombiana
+d.setTime(d.getTime() - 300 * 60000) // Forzar hora colombiana
 
 trmcol.query(function (err, trm) {
   if (err) {
