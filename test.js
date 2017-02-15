@@ -1,5 +1,5 @@
 var test = require('tape')
-var trmcol = require('./')
+var trmcol = require('./index')
 
 test('Valor actual', function (t) {
   t.plan(3)
@@ -7,8 +7,8 @@ test('Valor actual', function (t) {
   trmcol.query(function (err, trm1) {
     t.error(err)
     var d = new Date()
-    d.setTime(d.getTime() + (d.getTimezoneOffset() - 300) * 60000) // Forzar hora colombiana
-    trmcol.query(d.toISOString().slice(0, 10).replace(/-/g, ''), function (err, trm2) {
+    d.setTime(d.getTime() - 300 * 60000) // Forzar hora colombiana
+    trmcol.query(d.toISOString().slice(0, 10), function (err, trm2) {
       t.error(err)
       t.equal(trm1.value, trm2.value)
     })
