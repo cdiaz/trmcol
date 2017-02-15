@@ -5,8 +5,8 @@
   "author": "Cristiam Diaz <cdiaz@quantux.co>",
   "homepage": "https://github.com/cdiaz/trmcol/",
   "contributors": [
-    "cdiaz <cdiaz@quantux.co>",
-    "Diego R. Baquero <diegorbaquero@gmail.com>"
+    "Cristiam Diaz <cdiaz@quantux.co>",
+    "Diego Rodríguez Baquero <diegorbaquero@gmail.com>"
   ],
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
     "trm",
     "dolar",
     "tasa de cambio",
-    "colombia"
+    "colombia",
+    "col",
+    "peso"
   ],
   "dependencies": {
     "soap": "^0.13.0"
