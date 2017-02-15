@@ -9,7 +9,7 @@
 ```sh
 npm install trmcol --save // Para usar dentro de un proyecto JS
 
-(sudo) npm install trmcol -g // Para usar en consola
+(sudo) npm install trmcol -g // Para usar en consola con `trmcol`
 ```
 
 ## Ejemplo de Uso
