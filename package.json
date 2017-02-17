@@ -30,14 +30,15 @@
     "node": ">= 0.6.12"
   },
   "devDependencies": {
+    "bogota": "^1.1.0",
     "standard": "^6.0.8",
-    "tap-spec": "^4.1.1",
     "tape": "^4.6.3"
   },
   "scripts": {
-    "test": "standard && tape test.js | tap-spec"
+    "pretest": "standard",
+    "test": "bogota"
   },
   "bin": {
-    "trmcol": "./bin/cmd.js"
+    "trmcol": "./bin/trmcol"
   }
 }

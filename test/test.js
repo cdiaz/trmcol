@@ -1,5 +1,5 @@
 var test = require('tape')
-var trmcol = require('./index')
+var trmcol = require('./../index')
 
 test('Valor actual', function (t) {
   t.plan(3)
