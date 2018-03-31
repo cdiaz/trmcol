@@ -20,13 +20,13 @@ trmcol.query('2018-03-30')
   .catch(err => console.log(err))
 ```
 
-- El método trmcol.query() retorna una promesa.
-- El parámetro `fecha` es opcional y debe estár en formato YYYY-MM-DD.
+- El método `trmcol.query()` retorna una promesa.
+- El parámetro `fecha` es opcional y debe estár en formato `YYYY-MM-DD`.
 - Si el parámetro `fecha` no se especifica, se usará por defecto la fecha actual.
 - El resultado devuelto es un objeto JSON con la siguiente estructura:
 
 
-```js
+```
 {
   id: '660701',
   unit: 'COP',
@@ -35,6 +35,22 @@ trmcol.query('2018-03-30')
   value: '2780.47',
   success: true
 }
+```
+
+### Uso en consola
+
+Para obtener el valor de la TRM desde la línea de comandos, se debe instalar el paquete de manera global:
+
+```sh
+npm install -g trmcol
+```
+Ahora puede utilizar el comando:
+```sh
+trmcol
+```
+Esto retornará un resultado similar a:
+```sh
+La TRM del día ('Fri Mar 30 2018') es $2780.47
 ```
 ### Nota
 
