@@ -7,43 +7,37 @@
 ## Instalación
 
 ```sh
-npm install trmcol --save // Para usar dentro de un proyecto JS
-
-(sudo) npm install trmcol -g // Para usar en consola con `trmcol`
+npm install --save trmcol
 ```
 
 ## Ejemplo de Uso
 
 ```js
-var trmcol = require('trmcol')
+const trmcol = require('trmcol');
 
-trmcol.query(function (err, trm) { // Valor actual
-  if (err) {
-    return console.error(err)
-  }
-  console.log(trm) // JSON completo
-  console.log(trm.value) // Valor (texto)
-})
-
-trmcol.query('2016-03-19', function (err, trm) { // Valor en fecha pasada por parametro: Marzo 19, 2016
-  if (err) {
-    return console.error(err)
-  }
-  console.log(trm) // JSON completo
-  console.log(trm.value) // Valor (texto)
-})
+trmcol.query('2018-03-30')
+  .then(trm => console.log(trm))
+  .catch(err => console.log(err))
 ```
 
-El parametro de fecha es opcional y debe ser del formato YYYY-MM-DD 
+- El método trmcol.query() retorna una promesa.
+- El parámetro `fecha` es opcional y debe estár en formato YYYY-MM-DD.
+- Si el parámetro `fecha` no se especifica, se usará por defecto la fecha actual.
+- El resultado devuelto es un objeto JSON con la siguiente estructura:
 
-La respuesta retornada es un objeto JSON con la siguiente estructura: 
 
-`{ id: '304751', unit: 'COP', validityFrom: Sat Mar 19 2016 00:00:00 GMT-0500 (COT), validityTo: Tue Mar 22 2016 00:00:00 GMT-0500 (COT), value: '3065.79', success: true }`
-
+```js
+{
+  id: '660701',
+  unit: 'COP',
+  validityFrom: 2018-03-29T05:00:00.000Z,
+  validityTo: 2018-04-02T05:00:00.000Z,
+  value: '2780.47',
+  success: true
+}
+```
 ### Nota
 
-Por alguna razon desconocida, el Webservice de la Superintendencia Financiera no retorna datos en fechas anteriores al año 2013.
+>El servicio No retorna datos para las fechas anteriores al año 2013.
 
-Para mas informacion pueden remitirse a la documentación Oficial del servicio web:
-
-https://www.superfinanciera.gov.co/jsp/loader.jsf?lServicio=Publicaciones&lTipo=publicaciones&lFuncion=loadContenidoPublicacion&id=60819
+Para mas informacion pueden consultar la [documentación Oficial](https://www.superfinanciera.gov.co/jsp/loader.jsf?lServicio=Publicaciones&lTipo=publicaciones&lFuncion=loadContenidoPublicacion&id=60819) del servicio web
