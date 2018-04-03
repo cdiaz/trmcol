@@ -12,14 +12,17 @@ class Trmcol {
   query (date) {
     return new Promise((resolve, reject) => {
       soap.createClient(this.WSDL_URL, this.options, (err, client) => {
-        if (err) reject(err)
-        client.queryTCRM({tcrmQueryAssociatedDate: date}, (err, trm) => {
-          if (!err) {
-            resolve(trm.return)
-          } else {
-            reject(err.root.Envelope.Body.Fault.faultstring)
-          }
-        })
+        if (err) {
+          reject(err)
+        } else {
+          client.queryTCRM({tcrmQueryAssociatedDate: date}, (err, trm) => {
+            if (!err) {
+              resolve(trm.return)
+            } else {
+              reject(err.root.Envelope.Body.Fault.faultstring)
+            }
+          })
+        }
       })
     })
   }
