@@ -1,5 +1,6 @@
 'use strict'
 const soap = require('soap')
+require('tls').DEFAULT_MIN_VERSION = 'TLSv1';
 
 class Trmcol {
   constructor () {
